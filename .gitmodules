@@ -2,3 +2,7 @@
 	url  = https://gitee.com/wu_chuang/archaeology
 	path = stm32_master
 
+[submodule "stm32_sub"]
+	url  = https://gitee.com/wu_chuang/archaeology_sub
+	path = stm32_sub
+
