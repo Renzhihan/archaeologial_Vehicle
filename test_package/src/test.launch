@@ -1,0 +1,57 @@
+<launch>
+   <master auto="start"/>
+
+        <!--  ************** Global Parameters ***************  -->
+        <param name="/use_sim_time" value="true"/>
+
+  <!-- Run the lidar node -->
+  <node name="rplidar_node" pkg="rplidar_ros" type="rplidarNode" output="screen">
+      <param name="serial_port" type="string" value="/dev/rplidar"/>
+      <param name="serial_baudrate" type="int" value="256000"/>
+      <param name="frame_id" type="string" value="base_laser_link"/>
+      <param name="inverted" type="bool" value="false"/>
+      <param name="angle_compensate" type="bool" value="true"/>
+  </node>
+
+
+        <!--  ************** yhs_can_control_base ***************  -->
+ <node pkg="yhs_can_control" type="yhs_can_control_node" name="yhs_can_control_node" output="screen"/>
+
+
+        <!--  ************** Navigation ***************  -->
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+  	  	<rosparam file="$(find teb_local_planner_tutorials)/cfg/carlike/costmap_common_params.yaml" command="load" ns="global_costmap" />
+  	 	<rosparam file="$(find teb_local_planner_tutorials)/cfg/carlike/costmap_common_params.yaml" command="load" ns="local_costmap" />
+  		<rosparam file="$(find teb_local_planner_tutorials)/cfg/carlike/local_costmap_params.yaml" command="load" />
+  		<rosparam file="$(find teb_local_planner_tutorials)/cfg/carlike/global_costmap_params.yaml" command="load" />
+  		<rosparam file="$(find teb_local_planner_tutorials)/cfg/carlike/teb_local_planner_params.yaml" command="load" />
+
+		<param name="base_global_planner" value="global_planner/GlobalPlanner" />
+		<param name="planner_frequency" value="1.0" />
+		<param name="planner_patience" value="5.0" />
+
+		<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+		<param name="controller_frequency" value="5.0" />
+		<param name="controller_patience" value="15.0" />
+
+                <param name="clearing_rotation_allowed" value="false" /> <!-- Our carlike robot is not able to rotate in place -->
+	</node>
+
+
+	<!--  ****** Maps *****  -->
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find teb_local_planner_tutorials)/maps/maze.yaml" output="screen">
+                <param name="frame_id" value="map"/>
+	</node>
+
+	<node pkg="amcl" type="amcl" name="amcl" output="screen">
+		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
+
+	        <param name="initial_pose_x"            value="2"/>
+		<param name="initial_pose_y"            value="2"/>
+		<param name="initial_pose_a"            value="0"/>
+	</node>
+
+	  <!--  **************** Visualisation ****************  -->
+	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation.rviz"/>
+
+</launch> 

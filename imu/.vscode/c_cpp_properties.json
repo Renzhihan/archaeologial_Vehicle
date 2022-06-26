@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/dji/kaoguche_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/dji/kaoguche_ws/src/RoboRTS-icra2019/roborts_common/include/**",
+        "/home/dji/kaoguche_ws/src/RoboRTS-icra2019/roborts_costmap/include/**",
+        "/home/dji/kaoguche_ws/src/RoboRTS-icra2019/serial/include/**",
+        "/home/dji/kaoguche_ws/src/RoboRTS-icra2019/yhs_can_control/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
