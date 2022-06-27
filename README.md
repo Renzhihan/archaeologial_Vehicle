@@ -3,10 +3,14 @@
 #### 介绍
 基于ROS的智能考古土方运输系统开源代码
 
+#### 开发环境
+Ubuntu18.04+ROS Melodic
+
+#### 采用传感器
+煜禾森FR-07底盘+Intel第11代NUC+DWM1000－UWB基站与标签+思岚A1激光雷达+维特智能IMU
+
 #### 软件架构
 软件架构说明
-
-
 
 ├─ackermann_msgs-master 
 ├─archaeology ---------------------- // 主板<br>
