@@ -35,7 +35,8 @@ Ubuntu18.04+ROS Melodic
 #### 使用说明
 
 1.  roslaunch teb_local_planner_tutorials test.launch
-2.  xxxx
+2.  rosrun socket_server socket_server_node
+    [注] 
 3.  xxxx
 
 
