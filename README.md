@@ -35,9 +35,8 @@ Ubuntu18.04+ROS Melodic
 #### 使用说明
 
 1.  roslaunch teb_local_planner_tutorials test.launch
-2.  rosrun socket_server socket_server_node
+2.  rosrun roborts_decision along_attack_node启动决策节点
+3.  rosrun socket_server socket_server_node
     //[注] 服务器运行后 手机端小程序根据IP连接到服务器 在小程序端发出指令后 服务器会向决策模块发送对应指令（格式见msg中appdata）
-3.  xxxx
-
 
 
