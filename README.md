@@ -48,8 +48,9 @@ Ubuntu18.04+ROS Melodic
 [Ubuntu系统 USB设备端口绑定](https://blog.csdn.net/qq_41204464/article/details/115694264)
 
 #### 通信协议
-小程序与PC
+##### 小程序与PC<br>
 ![小程序与PC通信协议](utils/socket.jpg)
 
-STM32与PC
-[STM32与PC通信协议](http://)
+##### STM32与PC<br>
+详情见utils/STM32toPC.txt中 <br>
+[STM32与PC通信协议](https://gitee.com/purewind7/archaeologial_Vehicle/blob/master/utils/STM32toPC.txt)
