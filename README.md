@@ -39,7 +39,7 @@ Ubuntu18.04+ROS Melodic
 3.  rosrun socket_server socket_server_node
     //[注] 服务器运行后 手机端小程序根据IP连接到服务器 在小程序端发出指令后 服务器会向决策模块发送对应指令（格式见msg中appdata）
 
-####　参考文章与教程
+#### 参考文章与教程
 关于串口通信部分可查看知乎文章<br>
 [四个核心函数](https://zhuanlan.zhihu.com/p/495247904)<br>
 [数据流向](https://zhuanlan.zhihu.com/p/495807942)<br>
@@ -47,8 +47,9 @@ Ubuntu18.04+ROS Melodic
 关于固定端口的方法可参考<br>
 [Ubuntu系统 USB设备端口绑定](https://blog.csdn.net/qq_41204464/article/details/115694264)
 
-####　通信协议
+#### 通信协议
 小程序与PC
-
+![小程序与PC通信协议](utils/socket.jpg)
 
 STM32与PC
+[STM32与PC通信协议](http://)
