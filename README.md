@@ -7,12 +7,12 @@
 Ubuntu18.04+ROS Melodic
 
 #### 采用传感器
-煜禾森FR-07底盘+Intel第11代NUC+DWM1000－UWB基站与标签+思岚A1激光雷达+维特智能IMU
+煜禾森FR-07底盘+Intel第11代NUC+DWM1000－UWB基站与标签+思岚A1激光雷达+维特智能HWT905-IMU+维特智能WT53D激光测距模块+优信电子XY-15AS电机驱动+SENKYLASER SK-Z激光测距模块+大疆A板+创芯科技CANalyst-II分析仪
 
 #### 软件架构
 软件架构说明
 
-├─ackermann_msgs-master 
+├─ackermann_msgs-master <br>
 ├─archaeology ---------------------- // 主板<br>
 ├─archaeology_sub ------------------ // 副板<br>
 ├─d435i ---------------------------- // 深度相机<br>
@@ -39,4 +39,16 @@ Ubuntu18.04+ROS Melodic
 3.  rosrun socket_server socket_server_node
     //[注] 服务器运行后 手机端小程序根据IP连接到服务器 在小程序端发出指令后 服务器会向决策模块发送对应指令（格式见msg中appdata）
 
+####参考文章与教程
+关于串口通信部分可查看知乎文章
+[四个核心函数](https://zhuanlan.zhihu.com/p/495247904)
+[数据流向](https://zhuanlan.zhihu.com/p/495807942)
+[向单片机发送数据](https://zhuanlan.zhihu.com/p/496113092)
+关于固定端口的方法可参考
+[Ubuntu系统 USB设备端口绑定](https://blog.csdn.net/qq_41204464/article/details/115694264)
 
+####通信协议
+小程序与PC
+
+
+STM32与PC
